@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+Flask = "==3.0.3"
+flask-cors = "==4.0.1"
+numpy = "==1.26.4"
+Pillow = "==10.3.0"
+python-dotenv = "==1.0.1"
+pytest = "==8.2.2"
+tflite-runtime = "==2.14.0"
+
+[requires]
+python_version = "3.9"

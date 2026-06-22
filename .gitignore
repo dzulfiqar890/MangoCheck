@@ -1,0 +1,75 @@
+# =============================================================================
+# MangoCheck — .gitignore
+# =============================================================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# --- Virtual Environment ---
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.virtualenv/
+
+# --- Environment Variables ---
+# File .env berisi konfigurasi lokal dan tidak boleh di-commit.
+# Gunakan .env.example sebagai template.
+.env
+.env.local
+.env.production
+
+# --- Model TFLite ---
+# File model biasanya berukuran besar (puluhan hingga ratusan MB).
+# Jangan commit ke Git. Taruh secara manual atau gunakan Git LFS.
+model/*.tflite
+model/*.h5
+model/*.pb
+
+# --- Upload Sementara ---
+# Folder ini tidak boleh ada di production, tapi untuk jaga-jaga.
+uploads/
+tmp/
+
+# --- Testing & Coverage ---
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+.hypothesis/
+
+# --- IDE & Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- Vercel ---
+.vercel/
+
+# --- Logs ---
+*.log
+logs/

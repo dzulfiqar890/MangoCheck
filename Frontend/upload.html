@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangoCheck - Upload Foto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-upload">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <i class='bx bxs-leaf' style='font-size: 28px; color: #7E5700;'></i>
+                <span style="color: #5c3f00; font-family: var(--font-heading); font-weight: 800;">MangoCheck</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="upload.html" class="active">Cara Kerja</a>
+                <a href="tentang.html">Tentang</a>
+            </nav>
+            <a href="upload.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px; border-radius: 20px;">Cek Mangga</a>
+        </div>
+    </header>
+
+    <main class="container" style="min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 80px; padding-bottom: 80px;">
+        <div class="section-header text-center" style="margin-bottom: 48px;">
+            <h1 class="page-title text-center" style="font-size: 48px;">Analisis Mangga Anda</h1>
+            <p style="font-size: 18px; color: #555; max-width: 600px; margin: 0 auto;">Unggah foto mangga untuk mengetahui tingkat kematangannya secara instan dengan teknologi AI.</p>
+        </div>
+
+        <div class="upload-container-standalone">
+            <div class="upload-area" id="dropzone" style="max-width: 800px; width: 100%; margin: 0 auto; min-height: 400px;">
+                <input type="file" id="fileInput" accept="image/jpeg, image/png, image/webp" hidden>
+                
+                <div class="upload-placeholder" id="uploadPlaceholder">
+                    <div class="upload-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    </div>
+                    <h3>Tarik foto ke sini atau pilih file</h3>
+                    <p style="margin-top: 16px;">Mendukung format JPG, PNG, atau WEBP. Maksimal 4MB.</p>
+                </div>
+
+                <!-- Preview Area -->
+                <div class="preview-area hidden" id="previewArea">
+                    <img id="imagePreview" src="" alt="Preview">
+                    <div style="display: flex; gap: 16px; margin-top: 24px;">
+                        <button class="btn btn-secondary" id="btnChangeImage" onclick="event.stopPropagation(); document.getElementById('fileInput').click();">Ganti Foto</button>
+                        <button class="btn btn-primary" id="btnAnalyze" onclick="event.stopPropagation(); startAnalysisFromPreview()">Analisis Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading-area hidden" id="loadingArea">
+                    <div class="spinner"></div>
+                    <p style="margin-top: 16px; font-weight: 600; color: #333;">Menganalisis gambar...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <i class='bx bxs-leaf' style='font-size: 28px; color: #7E5700;'></i>
+                    <span style="color: #5c3f00; font-family: var(--font-heading); font-weight: 800;">MangoCheck</span>
+                </a>
+                <p>Solusi AI cerdas untuk analisis kematangan mangga. Meningkatkan efisiensi pertanian dan mengurangi sisa makanan.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <strong>Tautan</strong>
+                    <a href="index.html">Beranda</a>
+                    <a href="upload.html">Cara Kerja</a>
+                    <a href="tentang.html">Tentang</a>
+                </div>
+                <div class="link-group">
+                    <strong>Legal</strong>
+                    <a href="#">Kebijakan Privasi</a>
+                    <a href="#">Syarat Layanan</a>
+                    <a href="#">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 MangoCheck AI.</p>
+            <p class="disclaimer">Prototype Disclaimer: Hasil analisis adalah referensi digital untuk membantu kontrol kualitas.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

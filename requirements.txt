@@ -1,0 +1,29 @@
+# MangoCheck — Backend Dependencies
+#
+# Catatan tflite-runtime:
+# tflite-runtime adalah paket ringan khusus inference TFLite.
+# Jauh lebih kecil dari TensorFlow penuh (~1 MB vs ~500 MB).
+# Kompatibel dengan Python 3.11 di Linux (target Vercel/Render).
+#
+# PENTING: tflite-runtime mungkin tidak tersedia via pip untuk Windows secara langsung.
+# Untuk development di Windows, gunakan tensorflow sebagai fallback:
+#   pip install tensorflow
+# Model service akan otomatis mencoba tflite-runtime dulu, lalu tensorflow.lite sebagai fallback.
+#
+# Untuk deployment production (Linux), gunakan tflite-runtime agar lebih ringan.
+
+Flask==3.0.3
+flask-cors==4.0.1
+numpy==1.26.4
+Pillow==10.3.0
+python-dotenv==1.0.1
+pytest==8.2.2
+
+# Pilih salah satu sesuai environment:
+# tflite-runtime==2.14.0   # Untuk Linux/production (Vercel, Render)
+# tensorflow==2.16.1       # Untuk Windows development (lebih besar, tapi lebih mudah install)
+#
+# Uncomment baris yang sesuai dengan environment Anda, atau install manual:
+#   pip install tflite-runtime   (Linux)
+#   pip install tensorflow       (Windows development)
+tflite-runtime==2.14.0

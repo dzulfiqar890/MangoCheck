@@ -1,0 +1,6 @@
+# File ini menandai folder model/ agar tetap terlacak oleh Git
+# meskipun tidak ada file di dalamnya.
+#
+# Tempatkan file mango_classifier.tflite di folder ini setelah training selesai.
+# File .tflite TIDAK di-commit ke Git karena ukurannya bisa sangat besar.
+# Lihat README.md untuk instruksi lengkap.

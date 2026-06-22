@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangoCheck - Hasil Analisis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-hasil">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <i class='bx bxs-leaf' style='font-size: 28px; color: #7E5700;'></i>
+                <span style="color: #5c3f00; font-family: var(--font-heading); font-weight: 800;">MangoCheck</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="upload.html" class="active">Cara Kerja</a>
+                <a href="tentang.html">Tentang</a>
+            </nav>
+            <a href="upload.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px; border-radius: 20px;">Cek Mangga</a>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 80px; padding-bottom: 80px;">
+        <button class="btn-back" onclick="window.location.href='upload.html'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Kembali
+        </button>
+        <h1 class="page-title">Hasil Analisis</h1>
+        
+        <div class="result-layout">
+            <div class="result-image-card">
+                <img id="resultImage" src="https://images.unsplash.com/photo-1553279768-865429fd00dc?q=80&w=800&auto=format&fit=crop" alt="Analyzed Mango">
+            </div>
+            
+            <div class="result-details">
+                <!-- Warning for Low Confidence -->
+                <div id="lowConfidenceWarning" class="alert-warning hidden">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    <div>
+                        <strong>Perhatian Manual Diperlukan</strong>
+                        <p id="lowConfidenceText">Tingkat keyakinan model rendah. Lakukan pemeriksaan visual secara manual.</p>
+                    </div>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="status-header">
+                        <span class="label">Status Kematangan</span>
+                        <div class="status-badge" id="statusBadge">
+                            <span class="badge-icon">✓</span> <span id="statusText">Memuat...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="confidence-section">
+                        <div class="confidence-header">
+                            <span class="label">Tingkat Kepercayaan AI</span>
+                            <span class="data-num" id="confidenceValue">0%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="confidenceBar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recommendations-grid">
+                    <div class="rec-card">
+                        <div class="rec-icon"><i class='bx bx-shopping-bag'></i></div>
+                        <div class="rec-content">
+                            <strong>Tindakan</strong>
+                            <p id="actionRec">Memuat rekomendasi tindakan...</p>
+                        </div>
+                    </div>
+                    <div class="rec-card">
+                        <div class="rec-icon"><i class='bx bx-fridge'></i></div>
+                        <div class="rec-content">
+                            <strong>Penyimpanan</strong>
+                            <p id="storageRec">Simpan di suhu ruangan jika segera dikonsumsi, atau di lemari es untuk memperpanjang umur simpan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="action-bottom text-center" style="margin-top: 32px; margin-bottom: 64px;">
+            <a href="upload.html" class="btn btn-primary btn-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                Analisis Foto Lain
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <i class='bx bxs-leaf' style='font-size: 28px; color: #7E5700;'></i>
+                    <span style="color: #5c3f00; font-family: var(--font-heading); font-weight: 800;">MangoCheck</span>
+                </a>
+                <p>Solusi AI cerdas untuk analisis kematangan mangga. Meningkatkan efisiensi pertanian dan mengurangi sisa makanan.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <strong>Tautan</strong>
+                    <a href="index.html">Beranda</a>
+                    <a href="upload.html">Cara Kerja</a>
+                    <a href="tentang.html">Tentang</a>
+                </div>
+                <div class="link-group">
+                    <strong>Legal</strong>
+                    <a href="#">Kebijakan Privasi</a>
+                    <a href="#">Syarat Layanan</a>
+                    <a href="#">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 MangoCheck AI.</p>
+            <p class="disclaimer">Prototype Disclaimer: Hasil analisis adalah referensi digital untuk membantu kontrol kualitas.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

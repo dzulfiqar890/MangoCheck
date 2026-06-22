@@ -7,12 +7,20 @@
       "config": {
         "maxLambdaSize": "50mb"
       }
+    },
+    {
+      "src": "Frontend/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "api/index.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Frontend/$1"
     }
   ]
 }

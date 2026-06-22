@@ -9,7 +9,9 @@ const loadingArea = document.getElementById('loadingArea');
 const imagePreview = document.getElementById('imagePreview');
 
 // Constants
-const API_URL = 'http://127.0.0.1:5000/api/predict'; // Backend is at localhost:5000
+const API_URL = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost' 
+    ? 'http://127.0.0.1:5000/api/predict' 
+    : '/api/predict';
 const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4MB
 
 let selectedFile = null;

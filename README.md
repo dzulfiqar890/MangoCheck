@@ -2,7 +2,7 @@
 
 **Sistem Klasifikasi Tingkat Kematangan Mangga Berbasis Computer Vision**
 
-MangoCheck adalah prototype backend API berbasis Python dan Flask yang menerima foto mangga dan mengklasifikasikannya ke tiga kategori menggunakan model TensorFlow Lite:
+MangoCheck adalah prototype backend API berbasis Python dan Flask yang menerima foto mangga dan mengklasifikasikannya ke tiga kategori menggunakan arsitektur **MobileNetV2** (dieksport ke TensorFlow Lite):
 
 | Kelas    | Label   | Keterangan                          |
 |----------|---------|-------------------------------------|
@@ -39,7 +39,7 @@ MangoCheck adalah prototype backend API berbasis Python dan Flask yang menerima 
 ```
 Pengguna
    ↓
-Frontend HTML + CSS + JavaScript (Tahap 3)
+Frontend HTML + CSS + JavaScript
    ↓ POST /api/predict  multipart/form-data
 Backend Python + Flask
    ├── Validasi file (ukuran, format, integritas)
@@ -55,7 +55,7 @@ Backend Python + Flask
 |--------------------|------------------------------|
 | Bahasa             | Python 3.11                  |
 | Framework API      | Flask 3.x                    |
-| Inference model    | tflite-runtime               |
+| Inference model    | MobileNetV2 (tflite-runtime) |
 | Pengolahan gambar  | Pillow                       |
 | Perhitungan array  | NumPy                        |
 | Testing            | pytest                       |

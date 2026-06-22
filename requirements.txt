@@ -20,10 +20,10 @@ python-dotenv==1.0.1
 pytest==8.2.2
 
 # Pilih salah satu sesuai environment:
-# tflite-runtime==2.14.0   # Untuk Linux/production (Vercel, Render)
-# tensorflow==2.16.1       # Untuk Windows development (lebih besar, tapi lebih mudah install)
+# ai-edge-litert         # Untuk Linux/production (Vercel, Render) - mendukung Python 3.12
+# tensorflow==2.16.1     # Untuk Windows development (lebih besar, tapi lebih mudah install)
 #
 # Uncomment baris yang sesuai dengan environment Anda, atau install manual:
-#   pip install tflite-runtime   (Linux)
+#   pip install ai-edge-litert   (Linux)
 #   pip install tensorflow       (Windows development)
-tflite-runtime==2.14.0
+ai-edge-litert

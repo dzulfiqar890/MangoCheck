@@ -61,14 +61,18 @@ def _load_interpreter():
         # Coba import tflite_runtime terlebih dahulu (ringan, target production).
         # Jika tidak tersedia, coba tensorflow.lite sebagai fallback development.
         try:
-            import tflite_runtime.interpreter as tflite
-            logger.info("Menggunakan tflite_runtime untuk inference.")
+            import ai_edge_litert.interpreter as tflite
+            logger.info("Menggunakan ai_edge_litert untuk inference.")
         except ImportError:
-            logger.warning(
-                "tflite_runtime tidak ditemukan. Mencoba tensorflow.lite sebagai fallback. "
-                "Untuk production, gunakan tflite_runtime agar lebih ringan."
-            )
-            import tensorflow.lite as tflite
+            try:
+                import tflite_runtime.interpreter as tflite
+                logger.info("Menggunakan tflite_runtime untuk inference.")
+            except ImportError:
+                logger.warning(
+                    "tflite_runtime/ai_edge_litert tidak ditemukan. Mencoba tensorflow.lite sebagai fallback. "
+                    "Untuk production, gunakan ai-edge-litert agar lebih ringan."
+                )
+                import tensorflow.lite as tflite
 
         interpreter = tflite.Interpreter(model_path=str(model_path))
         interpreter.allocate_tensors()
